@@ -3,6 +3,7 @@ package app;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.FileAlreadyExistsException;
 
 /**
  * Clase principal de la aplicación
@@ -28,12 +29,14 @@ public class App {
 			Path pathArchivo = path.resolve(nombre);
 
 			switch (tipo) {
-			case TipoArchivo.Archivo -> {Files.createFile(pathArchivo);}
-			case TipoArchivo.Directorio -> {Files.createDirectory(pathArchivo);}
+			case TipoArchivo.Archivo -> Files.createFile(pathArchivo);
+			case TipoArchivo.Directorio -> Files.createDirectory(pathArchivo);
 			}
 			return true;
 
-		} catch (Exception e) {
+		} catch (FileAlreadyExistsException e) //Evitar que nos avise de que la carpeta ya existe.
+		{}
+		 catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -66,7 +69,7 @@ public class App {
 		Path configFiles = rutaInicial.resolve("config.json");
 
 		if(Files.notExists(configFiles)){
-			crearFicheroArchivo("config", TipoArchivo.Archivo, rutaInicial);
+			crearFicheroArchivo("config.json", TipoArchivo.Archivo, rutaInicial);
 			crearFicheroArchivo("Personaje", TipoArchivo.Directorio, rutaInicial);
 			crearFicheroArchivo("Escena", TipoArchivo.Directorio, rutaInicial);
 			crearFicheroArchivo("Partida", TipoArchivo.Directorio, rutaInicial);
