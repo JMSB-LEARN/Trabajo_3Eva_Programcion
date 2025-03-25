@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 public class App {
 
 	public static void main(String[] args) {
-		System.out.println("J");
+		comprobarConfig();
 	}
 
 	/**
@@ -23,7 +23,7 @@ public class App {
 	 * @return {@code true} si el archivo o directorio fue creado correctamente;
 	 *         {@code false} en caso de error.
 	 */
-	private boolean crearFicheroArchivo(String nombre, TipoArchivo tipo, Path path) {
+	private static boolean crearFicheroArchivo(String nombre, TipoArchivo tipo, Path path) {
 		try {
 			Path pathArchivo = path.resolve(nombre);
 
@@ -48,7 +48,7 @@ public class App {
 	 * @return {@code true} si el archivo o directorio fue creado correctamente;
 	 *         {@code false} en caso de error.
 	 */
-	private boolean crearFicheroArchivo(String nombre, TipoArchivo tipo) {
+	private static boolean crearFicheroArchivo(String nombre, TipoArchivo tipo) {
 		try {
 			return crearFicheroArchivo(nombre, tipo, Paths.get(""));
 		} catch (Exception e) {
@@ -61,7 +61,7 @@ public class App {
 	 * Comprueba si existe el archivo de configuracion y en caso contrario
 	 * lo crea junto a los directorios para Personaje, Escenario y Partida
 	 */
-	private void comprobarConfig(){
+	private static void comprobarConfig(){
 		Path rutaInicial = Paths.get("");
 		Path configFiles = rutaInicial.resolve("config.json");
 
