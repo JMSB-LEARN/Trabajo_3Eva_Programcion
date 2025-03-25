@@ -56,4 +56,20 @@ public class App {
 		}
 		return false;
 	}
+
+	/**
+	 * Comprueba si existe el archivo de configuracion y en caso contrario
+	 * lo crea junto a los directorios para Personaje, Escenario y Partida
+	 */
+	private void comprobarConfig(){
+		Path rutaInicial = Paths.get("");
+		Path configFiles = rutaInicial.resolve("config.json");
+
+		if(Files.notExists(configFiles)){
+			crearFicheroArchivo("config", TipoArchivo.Archivo, rutaInicial);
+			crearFicheroArchivo("Personaje", TipoArchivo.Directorio, rutaInicial);
+			crearFicheroArchivo("Escena", TipoArchivo.Directorio, rutaInicial);
+			crearFicheroArchivo("Partida", TipoArchivo.Directorio, rutaInicial);
+		}
+	}
 }
