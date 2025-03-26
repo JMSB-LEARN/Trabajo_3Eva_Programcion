@@ -73,6 +73,8 @@ public class App {
 			crearFicheroArchivo("Personaje", TipoArchivo.Directorio, rutaInicial);
 			crearFicheroArchivo("Escena", TipoArchivo.Directorio, rutaInicial);
 			crearFicheroArchivo("Partida", TipoArchivo.Directorio, rutaInicial);
+		}else{
+			System.out.println("El archivo de configuracion ya existe");
 		}
 	}
 }
