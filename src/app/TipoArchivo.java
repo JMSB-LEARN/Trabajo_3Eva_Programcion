@@ -1,4 +1,4 @@
-package app;
+package src.app;
 
 /**
  * Enumeración que representa los tipos posibles de archivos que se pueden crear.
