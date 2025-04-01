@@ -1,10 +1,15 @@
 package src.modelo;
-
 /**
- * Clase abstracta base para los modelos de la aplicación.
- * Proporciona una estructura común para las clases que representan
- * la lógica y los datos del sistema.
+ * Clase abstracta base para todos los modelos de la aplicación.
+ * Sirve como punto común para agrupar la lógica relacionada con el manejo de datos.
+ * 
+ * Esta clase puede ser extendida por modelos concretos como {@code ModeloConfiguracion} o {@code ModeloUsuarios}.
  */
 public abstract class Modelo {
+
+	/**
+ 	* Constructor por defecto.
+ 	*/
+	public Modelo() {}
 
 }

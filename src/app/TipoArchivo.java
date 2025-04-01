@@ -5,6 +5,15 @@ package src.app;
  * Puede ser un archivo regular o un directorio.
  */
 public enum TipoArchivo {
+    // Le he metido comentarios para que javadoc no se queje
+
+    /**
+     * Representa un archivo regular.
+     */
     Archivo,
+
+    /**
+     * Representa un directorio.
+     */
     Directorio
 }

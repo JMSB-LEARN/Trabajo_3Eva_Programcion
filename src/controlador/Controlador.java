@@ -7,4 +7,9 @@ package src.controlador;
  */
 public abstract class Controlador {
 
+    /**
+     * Constructor por defecto.
+     */
+    public Controlador() {}
+
 }
