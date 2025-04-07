@@ -12,6 +12,6 @@ public abstract class Controlador {
      */
     public Controlador() {}
 
-    public abstract iniciar();
+    public abstract void iniciar();
 
 }

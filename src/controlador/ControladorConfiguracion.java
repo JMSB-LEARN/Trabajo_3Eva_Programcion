@@ -2,10 +2,12 @@ package src.controlador;
 
 import src.modelo.ModeloConfiguracion;
 import src.vista.VistaConfiguracion;
+import src.vista.Vista;
+import src.modelo.Modelo;
 
 public class ControladorConfiguracion extends Controlador{
-	private Vista vistaConfiguracion ;
-	private Modelo modeloConfiguracion;
+	private VistaConfiguracion vistaConfiguracion ;
+	private ModeloConfiguracion modeloConfiguracion;
 
 	ControladorConfiguracion(){
 		this.vistaConfiguracion = new VistaConfiguracion();
@@ -13,7 +15,7 @@ public class ControladorConfiguracion extends Controlador{
 	}
 
 	@Override
-	public iniciar(){
+	public void iniciar(){
 		iniciarlizarConfiguracion();
 	}
     /**

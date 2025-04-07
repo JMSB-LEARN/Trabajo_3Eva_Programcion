@@ -15,7 +15,7 @@ import java.nio.file.Paths;
  * Clase encargada de gestionar el almacenamiento y recuperación de usuarios.
  * Utiliza serialización para guardar y cargar objetos {@link Usuario}.
  */
-public class ModeloUsuarios {
+public class ModeloUsuarios extends Modelo{
 
     private final Path carpetaUsuarios = Paths.get("Personaje");
 
