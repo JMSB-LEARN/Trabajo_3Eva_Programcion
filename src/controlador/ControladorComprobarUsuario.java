@@ -4,21 +4,31 @@ import src.vista.VistaUsuariosInicio;
 import src.modelo.ModeloUsuarios;
 import src.app.Usuario;
 
-public class ControladorComprobarUsuario extends Controlador{
+/**
+ * Controlador para comprobar la existencia de un usuario.
+ */
+public class ControladorComprobarUsuario extends Controlador {
 	private VistaUsuariosInicio vistaUsuariosInicio ;
 	private ModeloUsuarios modeloUsuarios;
     private Usuario jugador;
 
-	ControladorComprobarUsuario(){
-		this.vistaUsuariosInicio = new VistaUsuariosInicio();
-		this.modeloUsuarios = new ModeloUsuarios();
-	}
+    /**
+     * Constructor por defecto.
+     * Inicializa la vista de inicio de sesión de usuario y el modelo correspondiente.
+     */
+    ControladorComprobarUsuario(){
+        this.vistaUsuariosInicio = new VistaUsuariosInicio();
+        this.modeloUsuarios = new ModeloUsuarios();
+    }
 
-
-	@Override
-	public void iniciar(){
-		comprobarUsuario();
-	}
+    /**
+     * Inicia el proceso de comprobación de usuario.
+     * Se encarga de verificar si el usuario ya existe o de crear uno nuevo en caso contrario.
+     */
+    @Override
+    public void iniciar(){
+        comprobarUsuario();
+    }
 
  /**
      * Comprueba si el usuario ya existe. Si no existe, crea uno nuevo.

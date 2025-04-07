@@ -6,9 +6,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.nio.file.FileAlreadyExistsException;
 
-public class ModeloEscenario extends Modelo{
+/**
+ * Modelo encargado de manejar el archivo del escenario en la aplicación.
+ * Se asegura de que el archivo del escenario exista y contenga una estructura básica.
+ */
+public class ModeloEscenario extends Modelo {
 
     private static final String archivo = "Escenario/escenario1.txt";
     private static final Integer columnas = 10;
@@ -16,24 +19,24 @@ public class ModeloEscenario extends Modelo{
 
     /**
      * Constructor por defecto.
+     * Inicializa una instancia del modelo de escenario sin parámetros adicionales.
      */
     public ModeloEscenario() {}
 
     /**
-     * Comrpueba si existe el archivo escenario1.txt y en caso negativo lo crea.
-     * Tambien, exista o no, despues de comrpobarlo escribe en el archivo.
+     * Comprueba si existe el archivo escenario1.txt y, en caso negativo, lo crea.
+     * Además, exista o no, después de comprobarlo escribe en el archivo.
+     *
      * @throws Exception Si ocurre un error durante la verificación o creación.
      */
-    public static void crearYEscribirArchivo() {
+    public static void crearYEscribirArchivo() throws Exception{
         Path rutaArchivo = Paths.get(archivo);
 
         try {
-            
             if (Files.notExists(rutaArchivo)) {
                 Files.createFile(rutaArchivo);
             }
 
-            
             if (Files.size(rutaArchivo) == 0) {
                 List<String> contenido = generarEscenario();
                 Files.write(rutaArchivo, contenido);
@@ -44,14 +47,16 @@ public class ModeloEscenario extends Modelo{
     }
 
     /**
-     * Metodo para generar el contenido dentro del escenario. De momento esta vacio.
-     * @return Devuelve la lista de escenario.
+     * Método para generar el contenido dentro del escenario. Genera un borde superior e inferior,
+     * y líneas centrales representando las filas del escenario.
+     *
+     * @return Devuelve una lista de cadenas que representan la estructura del escenario.
      */
     private static List<String> generarEscenario() {
         List<String> escenario = new ArrayList<>();
-        
-        String bordeHorizontal = "_".repeat(columnas * 2 + 1); 
-        String filaMedia = "|" + " ".repeat(columnas * 2 - 1) + "|"; 
+
+        String bordeHorizontal = "_".repeat(columnas * 2 + 1);
+        String filaMedia = "|" + " ".repeat(columnas * 2 - 1) + "|";
 
         escenario.add(bordeHorizontal);
 

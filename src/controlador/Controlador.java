@@ -10,8 +10,12 @@ public abstract class Controlador {
     /**
      * Constructor por defecto.
      */
-    public Controlador() {}
+	public Controlador() {}
 
-    public abstract void iniciar();
+    /**
+ 	 * Inicia la ejecución del controlador.
+ 	 */
+	public abstract void iniciar();
+
 
 }
