@@ -1,9 +1,7 @@
 package src.controlador;
 
-import src.modelo.ModeloConfiguracion;
 import src.modelo.ModeloUsuarios;
 import src.app.Usuario;
-import src.vista.VistaConfiguracion;
 import src.vista.VistaUsuariosInicio;
 
 /**
@@ -13,9 +11,8 @@ import src.vista.VistaUsuariosInicio;
  */
 public class ControladorPrincipal extends Controlador {
 
-    static ModeloConfiguracion modeloConfiguracion = new ModeloConfiguracion();
+
     static ModeloUsuarios modeloUsuarios = new ModeloUsuarios();
-    static VistaConfiguracion vistaConfiguracion = new VistaConfiguracion();
     static VistaUsuariosInicio vistaUsuariosInicio = new VistaUsuariosInicio();
     static Usuario jugador;
 
@@ -33,18 +30,6 @@ public class ControladorPrincipal extends Controlador {
         comprobarUsuario();
     }
 
-    /**
-     * Inicializa la configuración de la aplicación verificando o creando
-     * los archivos y directorios necesarios.
-     */
-    public void iniciarlizarConfiguracion() {
-        try {
-            vistaConfiguracion.mostrarMensaje(modeloConfiguracion.comprobarConfig());
-        } catch (Exception e) {
-            vistaConfiguracion.mostrarError(e);
-            System.exit(1);
-        }
-    }
 
     /**
      * Comprueba si el usuario ya existe. Si no existe, crea uno nuevo.
