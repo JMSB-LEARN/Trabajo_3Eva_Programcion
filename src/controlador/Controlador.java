@@ -7,4 +7,15 @@ package src.controlador;
  */
 public abstract class Controlador {
 
+    /**
+     * Constructor por defecto.
+     */
+	public Controlador() {}
+
+    /**
+ 	 * Inicia la ejecución del controlador.
+ 	 */
+	public abstract void iniciar();
+
+
 }

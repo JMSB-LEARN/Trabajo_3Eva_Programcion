@@ -9,7 +9,17 @@ import java.nio.file.Paths;
 import java.nio.file.FileAlreadyExistsException;
 import src.app.TipoArchivo;
 
+/**
+ * Modelo encargado de gestionar la configuración inicial de la aplicación.
+ * Comprueba la existencia del archivo de configuración y crea la estructura base
+ * con los directorios necesarios.
+ */
 public class ModeloConfiguracion extends Modelo {
+
+    /**
+     * Constructor por defecto.
+     */
+    public ModeloConfiguracion() {}
 
 	/**
 	 * Comprueba si existe el archivo de configuración y, en caso contrario, lo crea
@@ -54,7 +64,6 @@ public class ModeloConfiguracion extends Modelo {
 			}
 		}
 	}
-
 
 	/**
 	 * Crea un archivo o directorio en la ruta especificada con el nombre y tipo

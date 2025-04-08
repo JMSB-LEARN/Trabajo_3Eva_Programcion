@@ -6,6 +6,11 @@ package src.vista;
 public class VistaConfiguracion extends Vista {
 
     /**
+     * Constructor por defecto.
+     */
+    public VistaConfiguracion() {}
+
+    /**
      * Muestra un error en la consola utilizando la traza de la excepción.
      *
      * @param e Excepción que contiene la información del error.
